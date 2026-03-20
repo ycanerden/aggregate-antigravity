@@ -61,3 +61,7 @@ async def run_scrape_task(investor_id: int):
 def scrape_investor(investor_id: int, background_tasks: BackgroundTasks, db: Session = Depends(get_db)):
     background_tasks.add_task(run_scrape_task, investor_id)
     return {"message": f"Scrape initiated for investor {investor_id}"}
+
+@router.get("/api/logs")
+def get_scrape_logs(db: Session = Depends(get_db)):
+    return db.query(ScrapeLog).order_by(ScrapeLog.id.desc()).limit(20).all()
