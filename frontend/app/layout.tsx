@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "VC Aggregator",
@@ -15,7 +11,7 @@ export default function RootLayout({
   children,
 }: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en">
       <body className={`antialiased flex flex-col min-h-screen`}>
         <header className="border-b sticky top-0 bg-background z-10">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
