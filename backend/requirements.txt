@@ -7,3 +7,5 @@ beautifulsoup4
 anthropic
 apscheduler
 thefuzz
+python-slugify
+sqlite-utils
