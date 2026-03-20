@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+python-dotenv
+playwright
+beautifulsoup4
+anthropic
+apscheduler
+thefuzz
