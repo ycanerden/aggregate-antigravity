@@ -32,8 +32,8 @@ def extract_companies_from_html(html_content: str) -> list:
 
     try:
         response = client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            max_tokens=8192,
+            model="claude-3-5-sonnet-20240620",
+            max_tokens=4096,
             system=SYSTEM_PROMPT,
             messages=[{"role": "user", "content": clean_html}]
         )
