@@ -4,7 +4,7 @@ from config import HEADLESS_BROWSER
 
 async def fetch_portfolio_html(url: str) -> str:
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=HEADLESS_BROWSER)
+        browser = await p.chromium.launch(headless=HEADLESS_BROWSER, args=["--no-sandbox", "--disable-setuid-sandbox"])
         context = await browser.new_context(
             user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
         )
