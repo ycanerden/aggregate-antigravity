@@ -43,4 +43,4 @@ def extract_companies_from_html(html_content: str) -> list:
         return json.loads(txt.strip())
     except Exception as e:
         print(f"Extraction error: {e}")
-        return []
+        raise e
